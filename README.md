@@ -9,6 +9,6 @@ The project is an web application for a barber's salon that allows users to quic
   - **C#**
 - f r o n t e n d:
   - **React**
-    - JavaScripT
+    - JavaScript
 
 ## Images
