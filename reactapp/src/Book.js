@@ -1,13 +1,13 @@
 import React from 'react';
 import './App.css';
 
-const Home = () => {
+const Book = () => {
 
   return (
     <div className="App">
-      <h1>BarberHouse</h1>
+      <h1>Book visit</h1>
     </div>
   );
 }
 
-export default Home;
+export default Book;

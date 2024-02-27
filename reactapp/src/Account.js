@@ -1,13 +1,13 @@
 import React from 'react';
 import './App.css';
 
-const Home = () => {
+const Account = () => {
 
   return (
     <div className="App">
-      <h1>BarberHouse</h1>
+      <h1>Account</h1>
     </div>
   );
 }
 
-export default Home;
+export default Account;

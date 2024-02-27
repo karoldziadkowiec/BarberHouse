@@ -5,7 +5,7 @@ const About = () => {
 
   return (
     <div className="App">
-      <h1>about us</h1>
+      <h1>About us</h1>
     </div>
   );
 }
