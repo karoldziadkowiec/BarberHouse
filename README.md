@@ -1,6 +1,6 @@
 # BarberHouse [IN DEVELOPMENT PHASE]
 ## About project
-The project is a web application for a barber's salon that allows users to quickly register for a visit.
+The project is a web application for a barber's salon that allows users to quickly register for a visit and barbers to manage their visits.
 
 ## Technologies
 - b a c k e n d:
