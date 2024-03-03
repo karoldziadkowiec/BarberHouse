@@ -1,0 +1,11 @@
+.whiteBackground {
+    background-color: white;
+    color: black;
+    height: 400px;
+}
+  
+  .blackBackground {
+    background-color: rgb(32, 31, 31);
+    height: 400px;
+    color: white;
+}
