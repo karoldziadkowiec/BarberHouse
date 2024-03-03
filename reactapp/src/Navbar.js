@@ -12,8 +12,10 @@ const AppNavbar = () => {
           <Navbar.Brand as={Link} to="/">BarberHouse</Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link as={Link} to="/">Home</Nav.Link>
-            <Nav.Link as={Link} to="/about">About us</Nav.Link>
-            <Nav.Link as={Link} to="/services">Services</Nav.Link>
+            <Nav.Link as={Link} to="/">About us</Nav.Link>
+            <Nav.Link as={Link} to="/">Team</Nav.Link>
+            <Nav.Link as={Link} to="/">Services</Nav.Link>
+            <Nav.Link as={Link} to="/">Our socials</Nav.Link>
             <Nav.Link as={Link} to="/book">Book</Nav.Link>
             <Nav.Link as={Link} to="/visits">Visits</Nav.Link>
             <Nav.Link as={Link} to="/account">Account</Nav.Link>
