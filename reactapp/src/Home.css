@@ -27,17 +27,47 @@
 .icon {
   width: 90px;
 }
-
-.whiteBackground {
-    background-color: white;
-    color: rgb(174, 145, 26);
-    padding: 10px;
-    height: 400px;
-}
   
 .blackBackground {
     background-color: rgb(32, 31, 31);
     color: rgb(174, 145, 26);
-    padding: 10px;
-    height: 400px;
+    padding: 20px;
+}
+
+.blackBackground h1 {
+  color: rgb(174, 145, 26);
+  padding-bottom: 20px;
+}
+
+.blackBackground h5 {
+  color: rgb(193, 193, 193);
+}
+
+.blackBackground h6 {
+  color: white;
+}
+
+.contact {
+  width: 30px;
+}
+
+.contact-def {
+  color:  rgb(198, 165, 36);
+  font-weight: bold;
+}
+
+.whiteBackground {
+  background-color: white;
+  color: rgb(174, 145, 26);
+  padding-top: 20px;
+  padding-bottom: 70px;
+}
+
+.whiteBackground h4 {
+  color: black;
+}
+
+.socials {
+  width: 150px;
+  padding: 20px;
 }
