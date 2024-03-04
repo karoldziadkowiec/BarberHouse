@@ -7,7 +7,6 @@
 .barberhouse {
   font-family: Garamond, serif;
   font-weight: bold;
-  font-size: 50px;
 }
 
 .startSection h2 {
@@ -22,11 +21,11 @@
 }
 
 .pole {
-  width: 4%;
+  width: 50px;
 }
 
 .icon {
-  width: 8%;
+  width: 90px;
 }
 
 .whiteBackground {
