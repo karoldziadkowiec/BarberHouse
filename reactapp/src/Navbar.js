@@ -9,6 +9,7 @@ const AppNavbar = () => {
 
   const handleClick = (id) => {
     const path = window.location.pathname;
+    
     if (path === "/") {
       animateScroll.scrollTo(document.getElementById(id).offsetTop, {
         smooth: true,

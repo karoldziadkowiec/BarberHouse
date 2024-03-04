@@ -5,8 +5,15 @@ import './Home.css';
 const Home = () => {
   return (
     <div className="App">
-      <section id="home" className="whiteBackground">
-        <h1>BarberHouse</h1>
+      <section id="home" className="startSection">
+        <h1>
+          <img src={require('./img/pole.png')} alt="pole" className="pole"/>
+          <span className="barberhouse">BARBERHOUSE</span>
+          <img src={require('./img/pole.png')} alt="pole" className="pole"/>
+        </h1>
+        <img src={require('./img/icon.png')} alt="icon" className="icon"/>
+        <h2>EXPERIENCE BARBERHOUSE: WHERE STYLE MEETS EXCELLENCE</h2>
+        <h3>Step into our world of expert grooming and leave feeling confident and refreshed</h3>
       </section>
       <section id="about" className="blackBackground">
         <h1>About us</h1>
