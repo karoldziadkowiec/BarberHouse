@@ -13,4 +13,4 @@ The project is a web application for a barber's salon that allows users to quick
 
 ## Images
 Home page:
-![Home page](https://github.com/karoldziadkowiec/BarberHouse/blob/master/photos/1.png)
+![Home page](https://github.com/karoldziadkowiec/BarberHouse/blob/master/github-images/1.png)
