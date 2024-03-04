@@ -1,7 +1,7 @@
 .startSection {
     background-color: white;
     color: black;
-    padding: 50px;
+    padding: 70px;
 }
 
 .barberhouse {
@@ -31,7 +31,7 @@
 .blackBackground {
     background-color: rgb(32, 31, 31);
     color: rgb(174, 145, 26);
-    padding: 20px;
+    padding: 40px;
 }
 
 .blackBackground h1 {
@@ -59,15 +59,47 @@
 .whiteBackground {
   background-color: white;
   color: rgb(174, 145, 26);
-  padding-top: 20px;
-  padding-bottom: 70px;
+  padding-top: 40px;
+}
+
+.whiteBackground h1 {
+  padding-bottom: 20px;
 }
 
 .whiteBackground h4 {
   color: black;
 }
 
+.whiteBackground h5 {
+  color: rgb(55, 55, 55);
+}
+
+.whiteBackground h6 {
+  color: rgb(0, 0, 0);
+}
+
 .socials {
   width: 150px;
   padding: 20px;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 40px;
+}
+
+.socials-whiteBackground {
+  background-color: white;
+  color: rgb(174, 145, 26);
+  padding-top: 40px;
+  padding-bottom: 60px;
+}
+
+.socials-whiteBackground h1 {
+  padding-bottom: 20px;
+}
+
+.socials-whiteBackground h4 {
+  color: black;
 }
