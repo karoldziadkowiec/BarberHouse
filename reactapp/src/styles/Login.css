@@ -1,0 +1,26 @@
+.left-container {
+    padding-top: 15%;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-bottom: 30px;
+}
+
+.right-container {
+    background-color: rgb(32, 31, 31);
+    padding-top: 20px;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-bottom: 50px;
+}
+
+.white-label {
+    color: white;
+}
+
+.long-button {
+    width: 260px;
+}
+
+.left-container h3, .right-container h3 {
+    color: rgb(186, 151, 14);
+}
