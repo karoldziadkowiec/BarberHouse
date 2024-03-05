@@ -17,6 +17,9 @@ namespace BarberHouse
                 options.UseSqlServer(builder.Configuration.GetConnectionString("connection")));
             builder.Services.AddScoped<IGroupRepository, GroupRepository>();
             builder.Services.AddScoped<IUserRepository, UserRepository>();
+            builder.Services.AddScoped<IServiceRepository, ServiceRepository>();
+            builder.Services.AddScoped<IDateRepository, DateRepository>();
+            builder.Services.AddScoped<IVisitRepository, VisitRepository>();
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
