@@ -2,11 +2,11 @@ import React from 'react';
 import './App.css';
 import Navbar from './Navbar';
 import Footer from './Footer';
-import Home from './Home';
-import Book from './Book';
-import Visits from './Visits';
-import Account from './Account';
-import Login from './Login';
+import Home from './components/Home';
+import Book from './components/Book';
+import Visits from './components/Visits';
+import Account from './components/Account';
+import Login from './components/Login';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 const App = () => {
