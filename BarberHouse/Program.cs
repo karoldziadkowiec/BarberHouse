@@ -1,4 +1,3 @@
-
 using BarberHouse.Database;
 using BarberHouse.Repositories.Classes;
 using BarberHouse.Repositories.Interfaces;
