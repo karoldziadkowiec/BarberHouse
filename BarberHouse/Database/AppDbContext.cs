@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using BarberHouse.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace BarberHouse.Database
 {
@@ -6,6 +7,8 @@ namespace BarberHouse.Database
     {
         public AppDbContext(DbContextOptions options) : base(options) {}
 
+        public DbSet<Group> Groups { get; set; }
+        public DbSet<User> Users { get; set; }
 
     }
 }

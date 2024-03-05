@@ -1,5 +1,7 @@
 
 using BarberHouse.Database;
+using BarberHouse.Repositories.Classes;
+using BarberHouse.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace BarberHouse
@@ -13,7 +15,8 @@ namespace BarberHouse
             // Add services to the container.
             builder.Services.AddDbContext<AppDbContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("connection")));
-            //builder.Services.AddScoped<IUserRepository, UserRepository>();
+            builder.Services.AddScoped<IGroupRepository, GroupRepository>();
+            builder.Services.AddScoped<IUserRepository, UserRepository>();
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
