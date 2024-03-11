@@ -35,5 +35,17 @@ namespace BarberHouse.Models
             this.Address = address;
             this.GroupId = groupId;
         }
+
+        public User(string name, string surname, string email, string password, string phone, DateTime birthday, string address, int groupId)
+        {
+            this.Name = name;
+            this.Surname = surname;
+            this.Email = email;
+            this.Password = password;
+            this.Phone = phone;
+            this.Birthday = birthday;
+            this.Address = address;
+            this.GroupId = groupId;
+        }
     }
 }
