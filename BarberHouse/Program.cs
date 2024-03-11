@@ -1,6 +1,9 @@
 using BarberHouse.Database;
+using BarberHouse.Models;
 using BarberHouse.Repositories.Classes;
 using BarberHouse.Repositories.Interfaces;
+using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 namespace BarberHouse
@@ -14,7 +17,7 @@ namespace BarberHouse
             // Database connection
             builder.Services.AddDbContext<AppDbContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("connection")));
-            // Rejestracja repozytoriów w kolekcji us³ug aplikacji
+            // Dependencies
             builder.Services.AddScoped<IGroupRepository, GroupRepository>();
             builder.Services.AddScoped<IUserRepository, UserRepository>();
             builder.Services.AddScoped<IRegistrationRepository, RegistrationRepository>();
@@ -22,6 +25,12 @@ namespace BarberHouse
             builder.Services.AddScoped<IServiceRepository, ServiceRepository>();
             builder.Services.AddScoped<IDateRepository, DateRepository>();
             builder.Services.AddScoped<IVisitRepository, VisitRepository>();
+            /*builder.Services.AddScoped<IPasswordHasher<User>, PasswordHasher<User>>();
+
+            // Identity
+            builder.Services.AddIdentity<User, Group>()
+                .AddEntityFrameworkStores<AppDbContext>()
+                .AddDefaultTokenProviders();*/
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -29,7 +38,7 @@ namespace BarberHouse
             builder.Services.AddSwaggerGen();
 
             var app = builder.Build();
-
+            app.UseCors(options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {

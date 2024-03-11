@@ -13,10 +13,7 @@ namespace BarberHouse.Models.DTOs
         public string Phone { get; set; }
         public DateTime Birthday { get; set; }
         public string Address { get; set; }
-        public int GroupId { get; set; }
-        public bool IsChecked { get; set; }
-
-        public RegisterDTO(string name, string surname, string email, string password, string confirmedPassword, string phone, DateTime birthday, string address, int groupId, bool isChecked)
+        public RegisterDTO(string name, string surname, string email, string password, string confirmedPassword, string phone, DateTime birthday, string address)
         {
             this.Name = name;
             this.Surname = surname;
@@ -26,8 +23,6 @@ namespace BarberHouse.Models.DTOs
             this.Phone = phone;
             this.Birthday = birthday;
             this.Address = address;
-            this.GroupId = groupId;
-            this.IsChecked = isChecked;
         }
     }
 }

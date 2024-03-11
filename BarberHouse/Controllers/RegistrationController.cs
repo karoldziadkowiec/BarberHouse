@@ -19,6 +19,58 @@ namespace BarberHouse.Controllers
             _registrationRepository = registrationRepository;
         }
 
+        [HttpGet("{userId}")]
+        public async Task<IActionResult> GetUserById(int userId)
+        {
+            try
+            {
+                var user = await _registrationRepository.GetUserById(userId);
+                if (user == null)
+                {
+                    return NotFound($"User with id {userId} not found");
+                }
+
+                return Ok(user);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, $"Error retrieving user: {ex.Message}");
+            }
+        }
+
+        [HttpGet("search/{userEmail}")]
+        public async Task<IActionResult> GetUserByEmail(string userEmail)
+        {
+            try
+            {
+                var user = await _registrationRepository.GetUserByEmail(userEmail);
+                if (user == null)
+                {
+                    return NotFound($"User with email {userEmail} not found");
+                }
+
+                return Ok(user);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, $"Error retrieving user: {ex.Message}");
+            }
+        }
+
+        [HttpGet("checkemail/{email}")]
+        public async Task<IActionResult> CheckEmailExistence(string email)
+        {
+            try
+            {
+                var emailExists = await _registrationRepository.CheckIfEmailExist(email);
+                return Ok(emailExists);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, $"Error checking email existence: {ex.Message}");
+            }
+        }
+
         [HttpPost]
         public async Task<IActionResult> Register(RegisterDTO model)
         {
@@ -31,11 +83,16 @@ namespace BarberHouse.Controllers
                 }
 
                 var newUser = await _registrationRepository.RegisterUser(model);
-                return Ok(newUser);
+
+                return CreatedAtAction(nameof(GetUserById), new { id = newUser.Id }, newUser);
+            }
+            catch (ArgumentException ex)
+            {
+                return BadRequest(new { message = ex.Message });
             }
             catch (Exception ex)
             {
-                return BadRequest(new { message = ex.Message });
+                return StatusCode(StatusCodes.Status500InternalServerError, new { message = "Internal server error." });
             }
         }
     }
