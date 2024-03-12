@@ -6,6 +6,6 @@ namespace BarberHouse.Repositories.Interfaces
     public interface ILoginRepository
     {
         Task<User> GetUserById(int userId);
-        //Task<User> LoginUser(LoginDTO model);
+        Task<User> GetUserByEmail(string email);
     }
 }
