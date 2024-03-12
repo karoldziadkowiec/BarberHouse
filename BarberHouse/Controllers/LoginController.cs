@@ -15,7 +15,7 @@ using System.Text;
 
 namespace BarberHouse.Controllers
 {
-    [Route("api/login")]
+    [Route("api/auth/login")]
     [ApiController]
     public class LoginController : ControllerBase
     {

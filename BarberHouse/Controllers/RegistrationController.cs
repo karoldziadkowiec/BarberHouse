@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BarberHouse.Controllers
 {
-    [Route("api/register")]
+    [Route("api/auth/register")]
     [ApiController]
     public class RegistrationController : ControllerBase
     {
