@@ -3,10 +3,36 @@ import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import '../App.css';
 import '../styles/Home.css';
+import { Link as RouterLink } from 'react-router-dom';
+import { animateScroll } from 'react-scroll';
 
 const Home = () => {
+
+  const handleClick = (id) => {
+    const path = window.location.pathname;
+
+    if (path === "/home") {
+      animateScroll.scrollTo(document.getElementById(id).offsetTop, {
+        smooth: true,
+        duration: 100
+      });
+    }
+    else {
+      window.location.href = "/home";
+    }
+  };
+
   return (
     <div className="App">
+      <div className="nav-links">
+        <RouterLink onClick={() => handleClick("about")} to="/home" className="nav-link" style={{ cursor: "pointer" }}>About us</RouterLink>
+        <div className="sign"> | </div>
+        <RouterLink onClick={() => handleClick("team")} to="/home" className="nav-link" style={{ cursor: "pointer" }}>Team</RouterLink>
+        <div className="sign"> | </div>
+        <RouterLink onClick={() => handleClick("services")} to="/home" className="nav-link" style={{ cursor: "pointer" }}>Services</RouterLink>
+        <div className="sign"> | </div>
+        <RouterLink onClick={() => handleClick("socials")} to="/home" className="nav-link" style={{ cursor: "pointer" }}>Our socials</RouterLink>
+      </div>
       <section id="home" className="startSection">
         <h1>
           <img src={require('../img/pole.png')} alt="pole" className="pole" />
@@ -100,9 +126,9 @@ const Home = () => {
         </div>
       </section>
       <section id="services" className="blackBackground">
-      <h1>Services</h1>
-      <h5>Explore our range of grooming options designed to enhance your style and confidence.</h5>
-      <h5>From classic cuts to beard trims, we offer personalized services tailored to your needs.</h5>
+        <h1>Services</h1>
+        <h5>Explore our range of grooming options designed to enhance your style and confidence.</h5>
+        <h5>From classic cuts to beard trims, we offer personalized services tailored to your needs.</h5>
       </section>
       <section id="services" className="blackBackground d-flex justify-content-center align-items-center">
         <div className="card-container">

@@ -9,6 +9,21 @@
   font-weight: bold;
 }
 
+.nav-links {
+  padding-top: 20px;
+  display: flex;
+  gap: 30px;
+  font-size: 20px;
+  font-weight: bold;
+  justify-content: center;
+  align-items: center;
+}
+
+.sign {
+  color:rgb(193, 156, 12);
+  font-weight: bold;
+}
+
 .startSection h2 {
   color: rgb(159, 132, 23);
   font-family: Garamond, serif;

@@ -36,3 +36,7 @@
     transform: rotate(360deg);
   }
 }
+
+.yellow-links .nav-link {
+  color: rgb(195, 180, 19);
+}
