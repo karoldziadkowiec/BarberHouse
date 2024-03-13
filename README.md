@@ -11,6 +11,9 @@ The project is a web application for a barber's salon that allows users to quick
   - **React**
     - JavaScript
 
-## Images
+## Example images
+Login page:
+![Login page](https://github.com/karoldziadkowiec/BarberHouse/blob/master/github-images/0.png)
+
 Home page:
-![Home page](https://github.com/karoldziadkowiec/BarberHouse/blob/master/github-images/0_.png)
+![Home page](https://github.com/karoldziadkowiec/BarberHouse/blob/master/github-images/1.png)
