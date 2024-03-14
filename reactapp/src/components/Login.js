@@ -22,7 +22,7 @@ const Login = () => {
     }));
   };
 
-  const handleLoginSubmit = async (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
 
     try {
@@ -58,7 +58,7 @@ const Login = () => {
   return (
     <div className="Login">
       <div className="login-container">
-        <Form onSubmit={handleLoginSubmit}>
+        <Form onSubmit={handleLogin}>
           <h3>Sign In</h3>
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label className="white-label">E-mail</Form.Label>

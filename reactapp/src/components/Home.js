@@ -6,7 +6,7 @@ import '../styles/Home.css';
 import { Link as RouterLink } from 'react-router-dom';
 import { animateScroll } from 'react-scroll';
 
-const Home = () => {
+const Home = ({ user}) => {
 
   const handleClick = (id) => {
     const path = window.location.pathname;
@@ -24,6 +24,9 @@ const Home = () => {
 
   return (
     <div className="App">
+      <div>
+            <h2>Witaj, {user.name}!</h2>
+        </div>
       <div className="nav-links">
         <RouterLink onClick={() => handleClick("about")} to="/home" className="nav-link" style={{ cursor: "pointer" }}>About us</RouterLink>
         <div className="sign"> | </div>

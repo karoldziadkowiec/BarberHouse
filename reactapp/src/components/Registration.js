@@ -21,11 +21,6 @@ const Registration = () => {
   const [message, setMessage] = useState('');
   const navigate = useNavigate();
 
-  const moveToLoginPage = () => {
-    navigate('/');
-  };
-
-
   const handleRegistrationInputChange = (e) => {
     const { name, value } = e.target;
     setFormData(prevState => ({
@@ -34,7 +29,7 @@ const Registration = () => {
     }));
   };
 
-  const handleRegistrationSubmit = async (e) => {
+  const handleRegistration = async (e) => {
     e.preventDefault();
 
     for (const key in formData) {
@@ -80,10 +75,14 @@ const Registration = () => {
     }
   };
 
+  const moveToLoginPage = () => {
+    navigate('/');
+  };
+
   return (
     <div className="Registration">
       <div className="registration-container">
-        <Form onSubmit={handleRegistrationSubmit}>
+        <Form onSubmit={handleRegistration}>
           <h3>Sign Up</h3>
           <Row>
             <Form.Group as={Col} className="mb-3">
