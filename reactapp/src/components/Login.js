@@ -26,7 +26,7 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch('https://localhost:7184/api/auth/login', {
+      const response = await fetch('https://localhost:7184/api/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -37,6 +37,10 @@ const Login = () => {
       if (!response.ok) {
         throw new Error('Error: Login failed.');
       }
+
+      const { token } = await response.json();
+
+      localStorage.setItem('token', token);
 
       moveToHomePage();
 

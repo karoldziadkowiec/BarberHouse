@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BarberHouse.Controllers
 {
-    [Route("api/auth/register")]
+    [Route("api/register")]
     [ApiController]
     public class RegistrationController : ControllerBase
     {
@@ -17,6 +17,31 @@ namespace BarberHouse.Controllers
         public RegistrationController(IRegistrationRepository registrationRepository)
         {
             _registrationRepository = registrationRepository;
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Register(RegisterDTO model)
+        {
+            try
+            {
+                var existingUser = await _registrationRepository.GetUserByEmail(model.Email);
+                if (existingUser != null)
+                {
+                    return BadRequest("Email is already registered.");
+                }
+
+                var newUser = await _registrationRepository.RegisterUser(model);
+
+                return CreatedAtAction(nameof(GetUserById), new { id = newUser.Id }, newUser);
+            }
+            catch (ArgumentException ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, new { message = "Internal server error." });
+            }
         }
 
         [HttpGet("{userId}")]
@@ -68,31 +93,6 @@ namespace BarberHouse.Controllers
             catch (Exception ex)
             {
                 return StatusCode(StatusCodes.Status500InternalServerError, $"Error checking email existence: {ex.Message}");
-            }
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> Register(RegisterDTO model)
-        {
-            try
-            {
-                var existingUser = await _registrationRepository.GetUserByEmail(model.Email);
-                if (existingUser != null)
-                {
-                    return BadRequest("Email is already registered.");
-                }
-
-                var newUser = await _registrationRepository.RegisterUser(model);
-
-                return CreatedAtAction(nameof(GetUserById), new { id = newUser.Id }, newUser);
-            }
-            catch (ArgumentException ex)
-            {
-                return BadRequest(new { message = ex.Message });
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError, new { message = "Internal server error." });
             }
         }
     }

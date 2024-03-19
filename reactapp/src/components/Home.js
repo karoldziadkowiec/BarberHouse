@@ -6,7 +6,7 @@ import '../styles/Home.css';
 import { Link as RouterLink } from 'react-router-dom';
 import { animateScroll } from 'react-scroll';
 
-const Home = ({ user}) => {
+const Home = ({ user } ) => {
 
   const handleClick = (id) => {
     const path = window.location.pathname;

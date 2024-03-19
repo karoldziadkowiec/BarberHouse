@@ -53,7 +53,7 @@ const Registration = () => {
     }
 
     try {
-      const response = await fetch('https://localhost:7184/api/auth/register', {
+      const response = await fetch('https://localhost:7184/api/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

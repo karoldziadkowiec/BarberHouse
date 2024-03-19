@@ -15,7 +15,7 @@ using System.Text;
 
 namespace BarberHouse.Controllers
 {
-    [Route("api/auth/login")]
+    [Route("api/login")]
     [ApiController]
     public class LoginController : ControllerBase
     {
@@ -33,14 +33,9 @@ namespace BarberHouse.Controllers
         {
             var user = await _loginRepository.GetUserByEmail(model.Email);
 
-            if (user == null)
+            if (user == null || user.Password != model.Password)
             {
-                return Unauthorized(); // Wrong E-mail
-            }
-
-            if (user.Password != model.Password)
-            {
-                return Unauthorized(); // Wrong Password
+                return Unauthorized(); // Wrong E-mail or Password
             }
 
             var token = GenerateJwtToken(user);
