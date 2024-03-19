@@ -7,7 +7,7 @@ The project is a web application for a barber's salon that allows users to quick
   - **ASP.NET Core Web API**
     - REST API
   - **C#**
-- f r o n t e n d:
+- f r o n t e n d 
   - **React**
     - JavaScript
 
